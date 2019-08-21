@@ -1,0 +1,57 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block hero %}
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Graduação em Música
+      </h1>
+      <h2 class="subtitle">
+        Autenticação
+      </h2>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block content %}
+{% if user.is_authenticated%}
+<div>
+Hello, {{user}}! You are logged in!
+    <p>Clique <a type="submit" href="{%url 'autenticacao:logout' %}">here</a> to logout</p>
+</div>
+
+{% else %}
+<div>
+<h1 class="title">Login</h1>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+{% if messages %}
+{% for message in messages %}
+   {{ message }}
+{% endfor %}
+{% endif %}
+
+<form method="post">
+  {% csrf_token %}
+    <div class="field">
+        <div class="control">
+            <span class="label">{{ forms.username.label }}</span>
+            <input class="input" id="{{ forms.username.id_for_label }}" name="{{ forms.username.html_name}}" type="text">
+        </div>
+    </div>
+     <div class="field">
+        <div class="control">
+            <span class="label">{{ forms.password.label }}</span>
+            <input class="input" id="{{ forms.password.id_for_label }}" name="{{ forms.password.html_name}}" type="password">
+        </div>
+     </div>
+     <br>
+    <button class="button is-primary" type="submit">Login</button>
+</form>
+<div>
+    <p>Não possui conta? <a href="{% url 'autenticacao:register' %}">Registre-se aqui</a>!</p>
+</div>
+</div>
+{%endif%}
+{% endblock %}

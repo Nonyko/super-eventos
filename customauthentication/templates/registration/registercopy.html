@@ -1,0 +1,63 @@
+{% extends 'core/base.html' %}
+{% block hero %}
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Graduação em Música
+      </h1>
+      <h2 class="subtitle">
+        Autenticação
+      </h2>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<h1 class="title">Criar Conta</h1>
+    <form method="post" >
+             {% csrf_token %}
+        <div class="field">
+            <div class="control">
+                <span class="label">{{ form.username.label }}</span>
+                <span style="font-size: 11px">{{ form.username.errors }}</span>
+                <input class="input" id="{{ form.username.id_for_label }}" name="{{ form.username.html_name}}" type="text" value="{{ username|default:'' }}">
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <span class="label">{{ form.cpf.label }}</span>
+                <span style="font-size: 11px">{{ form.cpf.errors }}</span>
+                <input class="input" id="{{ form.cpf.id_for_label }}" name="{{ form.cpf.html_name}}" type="text" value="{{ cpf|default:'' }}">
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <span class="label">{{ form.email.label }}</span>
+                <span style="font-size: 11px">{{ form.email.errors }}</span>
+                <input class="input" id="{{ form.email.id_for_label }}" name="{{ form.email.html_name}}" type="email" value="{{ email|default:'' }}">
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <span class="label">{{ form.password1.label }}</span>
+                <span style="font-size: 11px">{{ form.password1.errors }}</span>
+                <input class="input" id="{{ form.password1.id_for_label }}" name="{{ form.password1.html_name}}" type="password">
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <span class="label">{{ form.password2.label }}</span>
+                <span style="font-size: 11px">{{ form.password2.errors }}</span>
+                <input class="input" id="{{ form.password2.id_for_label }}" name="{{ form.password2.html_name}}" type="password">
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <input type="submit" name="submit" class="button is-primary" value="Registrar" />
+            </div>
+        </div>
+
+    </form>
+{% endblock %}

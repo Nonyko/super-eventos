@@ -1,0 +1,120 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<title>DEaD Seleções - Registre-se</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'loginformstatics/images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body style="background-color: #999999;">
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="login100-more" style="background-image: url({% static 'loginformstatics/images/bg-01.jpg' %});"></div>
+
+			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+				<form method="post" class="login100-form validate-form">
+                    {% csrf_token %}
+					<span class="login100-form-title p-b-59">
+						Cadastre-se
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate="CPF é obrigatório">
+						<span class="label-input100">CPF</span>
+                        <span style="font-size: 11px">{{ form.cpf.errors }}</span>
+						<input class="input100" type="number" id="{{ form.cpf.id_for_label }}" name="{{ form.cpf.html_name}}" placeholder="00000000">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Email válido é obrigatório: ex@abc.xyz">
+						<span class="label-input100">Email</span>
+                        <span style="font-size: 11px">{{ form.email.errors }}</span>
+						<input class="input100" type="text" id="{{ form.email.id_for_label }}" name="{{ form.email.html_name}}" placeholder="Email addess...">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Username é obrigatório">
+						<span class="label-input100">Nome de usuário</span>
+                        <span style="font-size: 11px">{{ form.username.errors }}</span>
+						<input class="input100" type="text" id="{{ form.username.id_for_label }}" name="{{ form.username.html_name}}" placeholder="Username...">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<span class="label-input100">Senha</span>
+                        <span style="font-size: 11px">{{ form.password1.errors }}</span>
+						<input class="input100" type="password" id="{{ form.password1.id_for_label }}" name="{{ form.password1.html_name}}" placeholder="*************">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
+						<span class="label-input100">Repita a Senha</span>
+                        <span style="font-size: 11px">{{ form.password2.errors }}</span>
+						<input class="input100" type="password" id="{{ form.password2.id_for_label }}" name="{{ form.password2.html_name}}" placeholder="*************">
+						<span class="focus-input100"></span>
+					</div>
+
+
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Criar conta
+							</button>
+						</div>
+
+						<a href="{% url 'autenticacao:login' %}" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+							Já tem uma conta? Acesse aqui.
+							<i class="fa fa-long-arrow-right m-l-5"></i>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<!--===============================================================================================-->
+	<script src="{% static 'loginformstatics/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'loginformstatics/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'loginformstatics/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'loginformstatics/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'loginformstatics/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'loginformstatics/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'loginformstatics/vendor/daterangepicker/daterangepicker.j' %}s"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'loginformstatics/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'loginformstatics/js/main.js' %}"></script>
+
+</body>
+</html>

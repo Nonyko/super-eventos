@@ -1,0 +1,21 @@
+{% extends 'core/base2.html' %}
+{% block hero %}
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Graduação em Música
+      </h1>
+      <h2 class="subtitle">
+        Autenticação
+      </h2>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<h1 class="title">Registro concluído!</h1>
+<p>Faça <a href="{% url 'autenticacao:login' %}">login</a> para continuar a inscrição.</p>
+
+{% endblock %}
