@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="bd-title font-weight-light">Crie/Edite Eventos!</h1>
+<form method="post">
+   {% csrf_token %}
+  {{form}}
+  <button class="btn btn-success mt-3 mb-3" type="submit">ok</button>
+
+</form>
+
+{% endblock content %}

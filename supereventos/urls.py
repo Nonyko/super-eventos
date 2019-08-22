@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
-from core.views import home, eventos, evento
+from core.views import home, eventos, evento, criarevento
 #autenticacao
 
 urlpatterns = [
@@ -25,5 +25,6 @@ urlpatterns = [
     path('eventos/', eventos, name="eventos"),
     re_path('evento/(?P<id>\d+)/$',
                         evento, name='evento'),
+    path('eventos/criar', criarevento, name="criarevento"),
 
 ]

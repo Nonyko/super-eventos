@@ -123,3 +123,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 AUTH_USER_MODEL = 'customauthentication.User'
+
+DATETIME_INPUT_FORMATS = ['%d/%m/%Y %H:%M']

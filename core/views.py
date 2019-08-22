@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from core.models import Evento
-
+from .forms import EventoForm
 
 def home(request):
     contexto = {}
@@ -32,4 +32,23 @@ def evento(request, id):
     }
     return render(request,
                   'evento.html',
+                  contexto)
+
+def criarevento(request):
+    if request.method == 'POST':
+        form = EventoForm(request.POST)
+        print(form)
+        if form.is_valid():
+            evento = form.save(commit=False)
+            evento.owner = request.user
+            print(evento)
+            #evento.save()
+    else:
+        form = EventoForm()
+
+    contexto = {
+    'form' : form
+    }
+    return render(request,
+                  'formevento.html',
                   contexto)
