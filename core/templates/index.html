@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+  <h1 class="display-4">Super Eventos!</h1>
+  <p class="lead">Crie, Gerencie e participe de Eventos!</p>
+  <hr class="my-4">
+  <p>Quer conferir os eventos? Clique no botão abaixo para começar!</p>
+  <a class="btn btn-primary btn-lg" href="{% url 'eventos' %}">Conferir Eventos</a>
+</div>
+
+<ul>
+    <li><a href="{% url 'eventos' %}">Ver eventos!</a></li>
+    <li>Ver usuários!</li>
+
+</ul>
+{% endblock content %}

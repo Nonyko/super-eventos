@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if evento %}
+
+    <div class="jumbotron">
+      <h1 class="display-4">{{evento.nome}}</h1>
+      <p class="lead">{{evento.descricao}}</p>
+      <hr class="my-4">
+      <p>Quer participar? Clique no botão abaixo para se inscrever como participante!</p>
+      <a class="btn btn-primary btn-lg" href="{% url 'eventos' %}">Participar!</a>
+    </div>
+    <div class="container">
+       <h1 class="font-weight-light">Onde?</h1>
+        <p>{{evento.local}}</p>
+        <h1 class="font-weight-light">Quando?</h1>
+        <p>{{evento.startdate}} - {{evento.enddate}}</p>
+        <h1 class="font-weight-light">Quem vai?</h1>
+        {% for convidado in evento.convidados.all %}
+        <p>{{ convidado.username }}</p>
+        {% endfor %}
+    </div>
+
+{% endif %}
+
+{% endblock content %}

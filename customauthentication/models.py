@@ -10,7 +10,7 @@ from rest_framework.authtoken.models import Token
 
 
 class MyUserManager(BaseUserManager):
-    def create_user(self, username, cpf, email, password=None):
+    def create_user(self, username, email, password=None):
         """
         Creates and saves a User with the given email, nome, username and password.
         """
@@ -23,13 +23,12 @@ class MyUserManager(BaseUserManager):
         )
 
         user.username = username
-        user.cpf = cpf
 
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, username, cpf, email, password):
+    def create_superuser(self, username, email, password):
         """
         Creates and saves a superuser with the given email, date of
         birth and password.
@@ -43,7 +42,6 @@ class MyUserManager(BaseUserManager):
         )
 
         user.username = username
-        user.cpf = cpf
 
         user.set_password(password)
         user.is_admin = True
@@ -54,7 +52,6 @@ class MyUserManager(BaseUserManager):
 class User(AbstractBaseUser):
 
     username = models.CharField(max_length=255, unique=True,)
-    cpf = models.CharField('cpf', max_length=255, unique=True)
 
     email = models.EmailField(
         verbose_name='email address',

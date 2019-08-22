@@ -1,0 +1,9 @@
+<div class="row w-100">
+    {% for evento in eventos%}
+    <div class="col-3">
+        {% include "card-evento.html" with evento=evento %}
+    </div>
+    {% endfor %}
+</div>
+
+

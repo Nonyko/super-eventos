@@ -3,44 +3,20 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-	<title>DEaD Seleções - Login</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="{% static 'loginformstatics/images/icons/favicon.ico' %}"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/vendor/bootstrap/css/bootstrap.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/fonts/iconic/css/material-design-iconic-font.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/vendor/animate/animate.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/vendor/css-hamburgers/hamburgers.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/vendor/animsition/css/animsition.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/vendor/select2/select2.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/vendor/daterangepicker/daterangepicker.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/css/util.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'loginformstatics/css/main.css' %}">
-<!--===============================================================================================-->
 </head>
-<body style="background-color: #999999;">
+<body>
 
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="login100-more" style="background-image: url({% static 'loginformstatics/images/bg-01.jpg' %});"></div>
+			<div class="login100-more"></div>
 
-			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-				<form method="post" class="login100-form validate-form">
+			<div>
+				<form method="post" class="validate-form">
                     {% csrf_token %}
-					<span class="login100-form-title p-b-59">
+					<span class="">
 						Faça Login para entrar.
 					</span>
 
@@ -79,22 +55,7 @@
 		</div>
 	</div>
 
-<!--===============================================================================================-->
-	<script src="{% static 'loginformstatics/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'loginformstatics/vendor/animsition/js/animsition.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'loginformstatics/vendor/bootstrap/js/popper.js' %}"></script>
-	<script src="{% static 'loginformstatics/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'loginformstatics/vendor/select2/select2.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'loginformstatics/vendor/daterangepicker/moment.min.js' %}"></script>
-	<script src="{% static 'loginformstatics/vendor/daterangepicker/daterangepicker.j' %}s"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'loginformstatics/vendor/countdowntime/countdowntime.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'loginformstatics/js/main.js' %}"></script>
+
 
 </body>
 </html>

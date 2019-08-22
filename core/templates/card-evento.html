@@ -1,0 +1,8 @@
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://place-hold.it/50x30/" alt="Imagem de capa do card">
+  <div class="card-body">
+    <h5 class="card-title">{{ evento.nome }}</h5>
+    <p class="card-text">{{ evento.descricao }}</p>
+    <a href="{% url 'evento' evento.id %}" class="btn btn-primary">Detalhes</a>
+  </div>
+</div>
