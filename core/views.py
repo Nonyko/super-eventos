@@ -34,15 +34,14 @@ def evento(request, id):
                   'evento.html',
                   contexto)
 
+
 def criarevento(request):
     if request.method == 'POST':
         form = EventoForm(request.POST)
-        print(form)
         if form.is_valid():
             evento = form.save(commit=False)
             evento.owner = request.user
-            print(evento)
-            #evento.save()
+            evento.save()
     else:
         form = EventoForm()
 
