@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from core.models import Evento
@@ -42,6 +42,7 @@ def criarevento(request):
             evento = form.save(commit=False)
             evento.owner = request.user
             evento.save()
+            return redirect('evento', evento.id)
     else:
         form = EventoForm()
 
