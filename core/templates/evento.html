@@ -9,6 +9,10 @@
       <hr class="my-4">
       <p>Quer participar? Clique no botão abaixo para se inscrever como participante!</p>
       <a class="btn btn-primary btn-lg" href="{% url 'eventos' %}">Participar!</a>
+      {% if request.user == evento.owner %}
+       <p>Algo não esta certo? Clique no botão abaixo para editar o evento!</p>
+       <a class="btn btn-info btn-lg" href="{% url 'editarevento' evento.id %}">Editar!</a>
+      {% endif %}
     </div>
     <div class="container">
        <h1 class="font-weight-light">Onde?</h1>

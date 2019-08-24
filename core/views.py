@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from core.models import Evento
 from .forms import EventoForm
 
+
 def home(request):
     contexto = {}
     return render(request,
@@ -47,7 +48,26 @@ def criarevento(request):
         form = EventoForm()
 
     contexto = {
-    'form' : form
+        'form': form
+    }
+    return render(request,
+                  'formevento.html',
+                  contexto)
+
+
+def editarevento(request, id):
+    evento = Evento.objects.get(id=id)
+    if request.method == 'POST':
+        form = EventoForm(request.POST, instance=evento)
+        if form.is_valid():
+            form.save()
+            return redirect('evento', evento.id)
+    else:
+
+        form = EventoForm(instance=evento)
+
+    contexto = {
+        'form': form
     }
     return render(request,
                   'formevento.html',
